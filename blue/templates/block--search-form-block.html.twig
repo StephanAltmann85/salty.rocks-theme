@@ -1,0 +1,7 @@
+<div class="search-block-form" data-drupal-selector="search-block-form" id="block-blue-suchformular" role="search">
+    <form action="{% if path('<front>') != '/' %}{{ path('<front>') }}{% endif %}/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+
+        <input title="Searching for" data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="{{ app.request.query.get("keys") }}" size="15" maxlength="128" class="form-search" /><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="&#xf002;" class="button js-form-submit form-submit" style="font-family: FontAwesome;" />
+
+    </form>
+</div>

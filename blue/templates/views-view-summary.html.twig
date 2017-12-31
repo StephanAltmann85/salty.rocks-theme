@@ -1,0 +1,9 @@
+<div class="block-blog-archive-row views-row">
+  {% for row in rows %}
+    <h3><a href="{{ row.url }}"{{ row.attributes.addClass(row.active ? 'is-active')|without('href') }}>{{ row.link }}</a>
+      {% if options.count %}
+        ({{ row.count }})
+      {% endif %}
+    </h3>
+  {% endfor %}
+</div>

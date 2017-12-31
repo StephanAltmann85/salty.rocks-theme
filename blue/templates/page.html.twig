@@ -1,0 +1,93 @@
+<header>
+  <div id="toolbar-top">
+    <div id="language-selection">
+        {{ page.language }}
+    </div>
+
+    {% if page.search %}
+      <div id="search">{{ page.search }}</div>
+    {% endif %}
+
+  </div>
+
+  <div id="header-logo">
+    <a href="{{ front_page }}"><img src="{{ base_path ~ directory }}/images/salty.png" alt="{{ site_name }}" /></a>
+  </div>
+
+  {% if page.menu %}
+    <menu> {{ page.menu }}</menu>
+  {% endif %}
+</header>
+
+<div class="spacer">
+    <div id="social">
+        {% if social_media_facebook %}<a href="https://facebook.com/profile.php?id={{ social_media_facebook }}" target="_blank"> <span class="fa fa-facebook"></span></a>{% endif %}
+        {% if social_media_twitter %}<a href="https://twitter.com/{{ social_media_twitter }}" target="_blank"> <span class="fa fa-twitter"></span></a>{% endif %}
+        {% if social_media_xing %}<a href="https://xing.com/profile/{{ social_media_xing }}" target="_blank"> <span class="fa fa-xing"></span></a>{% endif %}
+        {% if social_media_youtube %}<a href="https://youtube.com/channel/{{ social_media_youtube }}" target="_blank"> <span class="fa fa-youtube"></span></a>{% endif %}
+        {% if social_media_instagram %}<a href="https://instagram.com/{{ social_media_instagram }}" target="_blank"> <span class="fa fa-instagram"></span></a>{% endif %}
+        {% if social_media_github %}<a href="https://github.com/{{ social_media_github }}" target="_blank"> <span class="fa fa-github"></span></a>{% endif %}
+    </div>
+
+</div>
+
+<main>
+  <div id="content">
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+    {{ page.highlighted }}
+    {{ page.content }}
+  </div>
+  <div id="infobox">
+    {{ page.infobox }}
+  </div>
+</main>
+
+
+<footer>
+  <div id="footer-left"><p class="footer-headline">About</p>
+    <ul class="footer-imprint">
+      <li class="footer-imprint-name">{% trans %}Stephan Altmann{% endtrans %}</li>
+      <li class="footer-imprint-location">{% trans %}Andreasberger Str. 5, 12347 Berlin{% endtrans %}</li>
+      <li class="footer-imprint-mobile">{% trans %}+49 176 24657079{% endtrans %}</li>
+      <li class="footer-imprint-mail">{% trans %}stephan@1st-scripts.de{% endtrans %}</li>
+    </ul>
+
+
+  </div>
+  <div id="footer-right">
+{#
+    <div id="overlay-donations" class="overlay">
+      <div class="toolbar"><a class="close" href="#"><span>x</span></a></div>
+      <div class="wrapper">
+        <div><span  class="overlay-element-label">Paypal</span><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_donations">
+            <input type="hidden" name="business" value="stephan@1st-scripts.de">
+            <input type="hidden" name="lc" value="DE">
+            <input type="hidden" name="item_name" value="salty.rocks">
+            <input type="hidden" name="no_note" value="0">
+            <input type="hidden" name="currency_code" value="EUR">
+            <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+            <input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
+        <div><span class="overlay-element-label">Bitcoin</span> <img src="{{ base_path ~ directory }}/images/bc.png" alt="Donate Bitcoin" /> <p class="bc-donate">1DYK2Ny3kRnBK6ZT2azDoBAU7YmHRGiUn7</p></div>
+        <div><span  class="overlay-element-label">Flattr</span><a href="https://flattr.com/submit/auto?fid=g356x0&url=http%3A%2F%2Fsalty.rocks" target="_blank"><img src="{{ base_path ~ directory }}/images/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a></div>
+      </div>
+    </div>
+
+
+<p class="footer-headline footer-headline-right"><span class="footer-button" id="btn-donate">{% trans %}Donate{% endtrans %}</span></p>
+#}
+  </div>
+
+
+    <div id="footer-bottom"><p class="copyright">© 2017 Stephan Altmann. All rights reserved</p></div>
+</footer>
+
+
+
+
+

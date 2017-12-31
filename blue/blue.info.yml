@@ -1,0 +1,19 @@
+name: Blue
+type: theme
+description: 'An intentionally plain theme with no styling to demonstrate default Drupal’s HTML and CSS. Learn how to build a custom theme from Stark in the <a href="https://www.drupal.org/theme-guide">Theming Guide</a>.'
+version: '8.1.1'
+core: '8.x'
+project: 'drupal'
+datestamp: 1462362201
+regions:
+    header: 'Header'
+    menu: 'Menu'
+    search: 'Search'
+    infobox: 'Infobox'
+    content: 'Content'
+    footer: 'Footer'
+    language: 'Language'
+libraries:
+  - blue/global
+features:
+  - favicon

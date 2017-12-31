@@ -1,0 +1,77 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Stephan
+ * Date: 24.07.2016
+ * Time: 17:27
+ */
+ function blue_preprocess(&$variables, $hook)
+ {
+     $variables['base_path'] = base_path();
+ }
+
+ function blue_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+   // Work-around for a core bug affecting admin themes. See issue #943212.
+   if (isset($form_id)) {
+     return;
+   }
+
+   $form['social_media_facebook'] = array(
+     '#type'          => 'textfield',
+     '#title'         => t('Facebook-Id'),
+     '#default_value' => theme_get_setting('social_media_facebook'),
+     '#description'   => t("Id of your Facebook account."),
+   );
+
+   $form['social_media_youtube'] = array(
+     '#type'          => 'textfield',
+     '#title'         => t('Youtube-Channel-Id'),
+     '#default_value' => theme_get_setting('social_media_youtube'),
+     '#description'   => t("Id of your Youtube account."),
+   );
+
+   $form['social_media_github'] = array(
+     '#type'          => 'textfield',
+     '#title'         => t('Github-Id'),
+     '#default_value' => theme_get_setting('social_media_github'),
+     '#description'   => t("Id of your Github account."),
+   );
+
+   $form['social_media_bitbucket'] = array(
+     '#type'          => 'textfield',
+     '#title'         => t('Bitbucket-Id'),
+     '#default_value' => theme_get_setting('social_media_bitbucket'),
+     '#description'   => t("Id of your Bitbucket account."),
+   );
+
+  $form['social_media_xing'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('XING-Id'),
+    '#default_value' => theme_get_setting('social_media_xing'),
+    '#description'   => t("Id of your XING profile."),
+  );
+
+  $form['social_media_twitter'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Twitter-Id'),
+    '#default_value' => theme_get_setting('social_media_twitter'),
+    '#description'   => t("Id of your Twitter profile."),
+  );
+
+  $form['social_media_instagram'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Instagram-Id'),
+    '#default_value' => theme_get_setting('social_media_instagram'),
+    '#description'   => t("Id of your Instagram profile."),
+  );
+ }
+
+ function blue_preprocess_page(&$variables) {
+    $variables['social_media_facebook'] = theme_get_setting('social_media_facebook');
+    $variables['social_media_xing'] = theme_get_setting('social_media_xing');
+    $variables['social_media_twitter'] = theme_get_setting('social_media_twitter');
+    $variables['social_media_instagram'] = theme_get_setting('social_media_instagram');
+    $variables['social_media_bitbucket'] = theme_get_setting('social_media_bitbucket');
+    $variables['social_media_youtube'] = theme_get_setting('social_media_youtube');
+    $variables['social_media_github'] = theme_get_setting('social_media_github');
+ }
