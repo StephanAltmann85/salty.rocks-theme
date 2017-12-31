@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', function () {
     return gulp.src('css/*.css')
-        .pipe(autoprefixer())
+        //.pipe(autoprefixer())
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + (details.stats.minifiedSize/1024).toFixed(2)  + '/' + (details.stats.originalSize/1024).toFixed(2) + " kB");
         }))
