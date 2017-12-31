@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	cleanCSS = require('gulp-clean-css'),
     runSequence = require('run-sequence'),
-    cssbeautify = require('gulp-cssbeautify');
+    cssbeautify = require('gulp-cssbeautify'),
+    replace = require('gulp-replace');
 
 
 gulp.task('default', function () {
@@ -16,6 +17,7 @@ gulp.task('default', function () {
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + (details.stats.minifiedSize/1024).toFixed(2)  + '/' + (details.stats.originalSize/1024).toFixed(2) + " kB");
         }))
+        .pipe(replace('{#', '{ #'))
         .pipe(gulp.dest('css/compiled'));
 });
 
