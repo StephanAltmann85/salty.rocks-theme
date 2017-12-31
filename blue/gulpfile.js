@@ -3,7 +3,6 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     shell = require('gulp-shell'),
     browserSync = require('browser-sync').create(),
-	sourcemaps = require('gulp-sourcemaps'),
 	autoprefixer = require('gulp-autoprefixer'),
 	concat = require('gulp-concat'),
 	cleanCSS = require('gulp-clean-css'),
@@ -13,15 +12,11 @@ var gulp = require('gulp'),
 
 gulp.task('default', function () {
     return gulp.src('css/*.css')
-        .pipe(sourcemaps.init())
         .pipe(autoprefixer())
         .pipe(cleanCSS({debug: true}, function(details) {
-            console.log(details.name + ': ' + details.stats.originalSize);
-            console.log(details.name + ': ' + details.stats.minifiedSize);
+            console.log(details.name + ': ' + (details.stats.minifiedSize/1024).toFixed(2)  + '/' + (details.stats.originalSize/1024).toFixed(2) + " kB");
         }))
-        .pipe(concat('style.css'))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('compiled/css'));
+        .pipe(gulp.dest('css/compiled'));
 });
 
 gulp.task('watch', function() {
