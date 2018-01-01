@@ -8,17 +8,29 @@ var gulp = require('gulp'),
 	cleanCSS = require('gulp-clean-css'),
     runSequence = require('run-sequence'),
     cssbeautify = require('gulp-cssbeautify'),
-    replace = require('gulp-replace');
+    replace = require('gulp-replace'),
+    styleInject = require("gulp-style-inject");
 
 
 gulp.task('default', function () {
+    runSequence('compile', 'inject');
+});
+
+gulp.task('compile', function() {
     return gulp.src('css/*.css')
-        //.pipe(autoprefixer())
+    //.pipe(autoprefixer())
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + (details.stats.minifiedSize/1024).toFixed(2)  + '/' + (details.stats.originalSize/1024).toFixed(2) + " kB");
         }))
+
         .pipe(replace('{#', '{ #'))
         .pipe(gulp.dest('css/compiled'));
+});
+
+gulp.task('inject', function() {
+    gulp.src("inject_templates/*.twig")
+        .pipe(styleInject())
+        .pipe(gulp.dest("./templates"));
 });
 
 gulp.task('watch', function() {
