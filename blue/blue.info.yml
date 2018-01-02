@@ -40,5 +40,6 @@ stylesheets-remove:
   - 'core/themes/stable/css/system/components/system-status-report-counters.css'
   - 'core/themes/stable/css/system/components/system-status-counter.css'
   - 'core/themes/stable/css/system/components/system-status-report-general-info.css'
+  - 'core/modules/views/css/views.module.css'
 libraries-override:
   core/modernizr: false
