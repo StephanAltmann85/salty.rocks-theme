@@ -8,6 +8,7 @@
  function blue_preprocess(&$variables, $hook)
  {
      $variables['base_path'] = base_path();
+     $variables['image_path'] = 'https://cdn1.salty.rocks';
  }
 
  function blue_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {

@@ -78,8 +78,6 @@
         height: 25px;
         border: none;
         padding-left: 8px;
-        text-shadow: 0 0 0 #fff;
-        color: transparent !important;
     }
 
     #search-block-form {
@@ -97,6 +95,8 @@
         color: #fff;
         cursor: pointer;
         height: 28px;
+        text-shadow: 0 0 0 #fff;
+        color: transparent !important;
     }
 
     #search, menu {
@@ -186,7 +186,7 @@
 
     span.social {
         display: inline-block;
-        background: url('/{{ directory }}/images/social.png') no-repeat;
+        background: url('{{ image_path }}/themes/blue/images/social.png') no-repeat;
         overflow: hidden;
         text-indent: -9999px;
         text-align: left;
@@ -391,7 +391,7 @@
     span#rss-icon {
         height: 28px;
         width: 28px;
-        background: url(/themes/blue/images/sprites.png) 0 88px;
+        background: url({{ image_path }}/themes/blue/images/sprites.png) 0 88px;
         display: inline-block;
     }
 
