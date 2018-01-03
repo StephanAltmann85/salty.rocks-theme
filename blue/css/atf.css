@@ -264,9 +264,15 @@
         padding-right: 30px;
     }
 
-    .blog-container * .views-field-body, .blog-entry-container * .views-field-body, .content-container * .views-field-body, .content-container * .views-field-field-description {
+    .blog-container * .views-field-body, .content-container * .views-field-body, .content-container * .views-field-field-description {
         color: #666;
         font-size: 14px;
+        text-align: justify;
+    }
+
+    .blog-entry-container * .views-field-body {
+        color: #666;
+        font-size: 15px;
         text-align: justify;
     }
 
@@ -451,6 +457,7 @@
         white-space: -pre-wrap;
         white-space: -o-pre-wrap;
         word-wrap: break-word;
+        font-size: 12px;
     }
 
     /* Slider */
