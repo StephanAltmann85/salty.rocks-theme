@@ -232,11 +232,6 @@
         width: 100%;
     }
    
-   .blog-entry-container * .views-field.views-field-body * a {
-      color: #6a9430 !important;
-      font-weight: bold;
-   }
-
     #content {
         -webkit-box-flex: 100;
         -ms-flex: 100;
