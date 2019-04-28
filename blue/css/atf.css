@@ -21,6 +21,11 @@
         color: #96db37;
         text-decoration: none;
     }
+   
+   input, select {
+      -webkit-appearance: none;
+      border-radius: 0;
+   }
 
     #search, #toolbar-top, header, main, menu {
         display: -webkit-box;
