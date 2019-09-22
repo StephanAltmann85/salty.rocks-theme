@@ -28,7 +28,7 @@ gulp.task('compile', function() {
 });
 
 gulp.task('inject', function() {
-    gulp.src("inject_templates/*.twig")
+    gulp.src("inject/*.twig")
         .pipe(styleInject())
         .pipe(gulp.dest("./templates"));
 });
