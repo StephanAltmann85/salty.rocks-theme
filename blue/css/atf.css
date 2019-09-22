@@ -16,6 +16,10 @@
     h1 {
         color: #96db37;
     }
+   
+    h3 {
+        font-size: 14px;
+    }
 
     a:hover, nav ul li a:hover {
         color: #96db37;
