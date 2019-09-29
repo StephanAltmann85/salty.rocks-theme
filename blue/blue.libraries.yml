@@ -3,4 +3,4 @@ global:
   css:
     theme:
       https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700: { type: external }
-      //cdn1.salty.rocks/themes/blue/css/compiled/style.css: { type: external }
+      css/compiled/style.css: { }
